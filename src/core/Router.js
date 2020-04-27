@@ -1,10 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Navbar, Nav, Button, Form } from 'react-bootstrap';
+import { List } from 'react-bootstrap-icons';
 import Home from '../pages/home/Home';
 import About from '../pages/about/About';
 import MenuComponent from './Menu';
-
+import Description from '../pages/description/Desc.js';
+import Houses from '../pages/houses/Houses.js';
+import HouseDetails from '../pages/houses/Details';
 
 
 class RouterComponent extends React.Component {
@@ -43,14 +46,14 @@ class RouterComponent extends React.Component {
         return (
             <Router>
                 <Navbar fixed="top" bg="light" expand="lg">
-                    <Nav.Link onClick={this.alterMenuState} >Menu</Nav.Link>
-                    <Navbar.Brand className="navbar-brand" href="/">MyWebsite</Navbar.Brand>
+                    <Nav.Link onClick={this.alterMenuState} ><List size={25}/></Nav.Link>
+                    <Navbar.Brand className="brand bluecolor" href="/">WhyTiny</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
-                            <Nav.Link href="/">Home</Nav.Link>
-                            <Nav.Link href="/about">About</Nav.Link>
-                            <Nav.Link className="ml-right" type="submit">Submit</Nav.Link>
+                            <Nav.Link href="/description">About Us</Nav.Link>
+                            <Nav.Link href="/houses">Houses</Nav.Link>
+                            <Nav.Link href="/about">Creator</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                     <Navbar.Collapse className="justify-content-end">
@@ -65,12 +68,11 @@ class RouterComponent extends React.Component {
                 {this.state.menuShow && <MenuComponent />}
 
                 <Switch>
-                    <Route exact path="/">
-                        <Home />
-                    </Route>
-                    <Route path="/about">
-                        <About />
-                    </Route>
+                    <Route exact path="/" component={Home} />
+                    <Route exact path="/houses" component={Houses} />
+                    <Route exact path="/houses/details/:id" component={HouseDetails} />
+                    <Route exact path="/about" component={About} />
+                    <Route exact path="/description" component={Description} />
                 </Switch>
             </Router>
         )

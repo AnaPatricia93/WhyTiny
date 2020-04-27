@@ -3,6 +3,9 @@
     justify-content: center;
     display: flex;
     text-align: center;
+    background-color: rgb(216, 216, 216);
+    height: 100vh;
+    width: auto
   }
 
  

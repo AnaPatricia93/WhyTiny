@@ -1,0 +1,26 @@
+[
+  {
+    "_id": "5e5d886917b854007ea96ad3",
+    "title": "Tiny Home",
+    "description": "Tiny and Beautiful",
+    "category": "Modern",
+    "author": "J.R.R. Tolkien",
+    "publish_year": 2002
+  },
+  {
+    "_id": "5e5d9244bdadba007f2eccde",
+    "title": "Old Design",
+    "description": "Feel like a real home",
+    "category": "Rustic",
+    "author": "Vadims Zinatulins",
+    "publish_year": 2020
+  },
+  {
+    "_id": "5e5d925ebdadba007f2eccdf",
+    "title": "Tiny for Cold",
+    "description": "Simple warm and coozy",
+    "category": "Winter",
+    "author": "Ramiro Nicolau",
+    "publish_year": 2015
+  }
+]
