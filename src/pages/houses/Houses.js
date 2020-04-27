@@ -3,12 +3,13 @@ import '../General.css';
 import { Container, Table, Button } from 'react-bootstrap';
 import houseService from '../../services/houses';
 import { InfoCircle } from 'react-bootstrap-icons';
-
+import UpdateDialogComponent from '../../components/UpdateDialog'
 class Houses extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            houses: []
+            houses: [],
+            toCreate: false
         }
     }
 
@@ -20,10 +21,19 @@ class Houses extends React.Component {
 
     render() {
         const { houses } = this.state;
-        
+
         return <div className="background">
 
             <Container>
+
+                <Button variant="outline-primary" style={{ margin: '10px 0' }} onClick={() => this.setState({ toCreate: true })}>Add House</Button>
+
+                <UpdateDialogComponent 
+                        show={toCreate}
+                        handleClose={() => this.setState({toCreate: false})}
+                        submited={createHouse => this.setState({ houses: [...houses, createdHouse], toCreate: false})}
+                    />
+
                 <Table striped bordered hover>
                     <thead>
                         <tr>
